@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="cordova.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+</head>
+<body>
+    <div data-role="page" id="pageone">
+        <div data-role="header" data-theme="b">
+            <a href="#" class="ui-btn ui-corner-all  ui-icon-home ui-btn-icon-left">STRONA GŁÓWNA</a>
+            <h1>BLUE EYE PROJECT</h1>
+        </div>
+
+
+
+        <div data-role="main" class="ui-content">
+
+            <a href="#pagetwo" style="background-color:orange" data-transition="flow" class="ui-btn ui-shadow  ui-corner-all">DODAJ TRANSAKCJE</a>
+        </div>
+
+        <div data-role="main" class="ui-content">
+
+            <a href="#pagethree" style="background-color:orange" data-transition="flow" class="ui-btn ui-shadow  ui-corner-all">DODAJ KLIENTA</a>
+        </div>
+
+        <div data-role="main" class="ui-content">
+
+            <a href="#pagefour" style="background-color:orange" data-transition="flow" class="ui-btn ui-shadow  ui-corner-all">KALKULATOR</a>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <a href="#myPopup" style="background-color:orange" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">INFO</a>
+
+            <div data-role="popup" id="myPopup" data-theme="b" class="ui-content">
+                <div style="font-size:40px;"><h3>Witaj!</h3></div>
+                <p>Aplikacja do obsługi mobilnej naszej firmy. <span style="font-size:55px;"></span>Wymaga połączenia z bazą danych <strong>Zauważ:</strong> Aplikacja w dalszym stanie jest w fazie testów.</p>
+
+                <div data-role="footer" data-theme="b">
+                    <h1>@2017</h1>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <h1>@2017</h1>
+        </div>
+    </div>
+
+    <div data-role="page" id="pagetwo">
+        <div data-role="header" data-theme="b">
+            <a href="#pageone" data-transition="slidefade" class="ui-btn ui-corner-all  ui-icon-home ui-btn-icon-left">Home</a>
+            <h1>Dodaj transakcje</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <form method="post" action="/action_page_post.php">
+                <label for="ID">ID</label>
+                <input type="number" name="ID" id="ID" placeholder="ID..."><br>
+                <label for="ID klienta">ID Klienta</label>
+                <input type="number" name="ID" id="ID" placeholder="ID klienta..."><br>
+                <label for="ilosc">Ilość piecy:</label>
+                <input type="number" name="ilosc" id="ilosc" placeholder="Ilosc piecy...">
+                <label for="kwota">Kwota:</label>
+                <input type="number" name="kwota" id="kwota" placeholder="kwota...">
+                <label for="Data">Data:</label>
+                <input type="number" name="Data" id="Data" placeholder="Data...">
+                <label for="miasto">MIASTO:</label>
+                <input type="text" name="miasto" id="miasto" placeholder="Miasto...">
+                <label for="Opis">Opis transakcji:</label>
+                <input type="number" name="Opis" id="Opis" placeholder="Opis...">
+                <input type="submit" value="Submit" data-icon="check" data-iconpos="right" data-inline="true">
+
+            </form>
+
+
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <h1>@2017</h1>
+        </div>
+    </div>
+
+    <div data-role="page" id="pagethree">
+        <div data-role="header" data-theme="b">
+            <a href="#pageone" data-transition="slidefade" class="ui-btn ui-corner-all  ui-icon-home ui-btn-icon-left">Home</a>
+            <h1>Dodaj klienta</h1>
+        </div>
+
+
+
+        <div data-role="main" class="ui-content">
+            <form method="post" action="/action_page_post.php">
+                <label for="ID">ID</label>
+                <input type="number" name="ID" id="ID" placeholder="ID..."<br>
+                <label for="imie">Imię</label>
+                <input type="number" name="imie" id="imie" placeholder="Imię..."<br>
+                <label for="lokal">Numer lokalu:</label>
+                <input type="number" name="lokal" id="lokal" placeholder="Numer lokalu...">
+                <label for="budynek">Numer budynku:</label>
+                <input type="number" name="budynek" id="budfynek" placeholder="Numer budynku...">
+                <label for="Ulica">Ulica:</label>
+                <input type="text" name="Ulica" id="Ulica" placeholder="Ulica...">
+                <label for="miasto">MIASTO:</label>
+                <input type="text" name="miasto" id="miasto" placeholder="Miasto...">
+                <label for="Telefon">Telefon:</label>
+                <input type="number" name="Telefon" id="Telefon" placeholder="Numer telefonu...">
+                <label for="Email">Email:</label>
+                <input type="text" name="Email" id="Email" placeholder="Adres email...">
+                <input type="submit" value="Submit" data-icon="check" data-iconpos="right" data-inline="true">
+
+
+            </form>
+
+        </div>
+
+        <div data-role="footer" data-theme="b">
+            <h1>@2017</h1>
+        </div>
+    </div>
+
+    <div data-role="page" id="pagefour">
+        <div data-role="header" data-theme="b">
+            <a href="#pageone" data-transition="slidefade" class="ui-btn ui-corner-all  ui-icon-home ui-btn-icon-left">Home</a>
+            <h1>KALKULATOR</h1>
+        </div>
+        <div>
+
+            <form id="odb_1faz" action="">
+
+                <div>
+                    Podaj moc znamionową (W): <input type="number" name="moc_znamionowa"><br />
+                    Podaj napięcie znamionowe (V): <input type="number" name="napiecie" value="230"><br />
+                    <button onclick=" return odb_1faz()" style="background-color:orange">Oblicz</button>
+
+
+                </div>
+            </form>
+            <script>
+                // Przekroj dla odbiornika 1 fazowego
+                function odb_1faz() {
+                    //przypisanie obiektu moc_znamionowa do zmiennej
+                    var pole_moc = document.forms['odb_1faz'].moc_znamionowa;
+                    //odczytanie mocy
+                    var moc_znamionowa = pole_moc.value;
+
+                    //przypisanie obiektu napiecie do zmiennej
+                    var pole_napiecie = document.forms['odb_1faz'].napiecie;
+                    //odczytanie napiecia
+                    var napiecie = pole_napiecie.value;
+                    // obliczanie pradu obciazenia
+                    var prad;
+                    prad = moc_znamionowa / napiecie;
+                    //alert(prad);
+                    var prad_pop = prad.toFixed(2);
+                    if (moc_znamionowa > 3680) {
+                        alert("Prąd powyżej 16A, potrzebne zasilanie 3-fazowe");
+                    } else if (prad_pop > 9.5) {
+                        alert(prad_pop + "A. Zastosuj przewod 2,5mm i zab. 16A.");
+                    } else if (prad_pop < 9.5) {
+                        alert(prad_pop + "A. Zastosuj przewod 1,5mm i zab 10A.");
+                    }
+                    return false;
+                }
+            </script>
+            Prąd znamionowy odbiornika rezystancyjnego 3 fazowego
+            <form id="odb_3faz" action="">
+                <div>
+                    Podaj moc znamionową (W): <input type="number" name="moc_znamionowa"><br />
+                    Podaj napięcie międzyprzewodowe (V): <input type="number" name="napiecie3f" value="400"><br />
+                    <button onclick=" return odb_3faz()" style="background-color:orange">Oblicz</button>
+                </div>
+            </form>
+            <script>
+                // Przekroj dla odbiornika 1 fazowego
+                function odb_3faz() {
+                    //przypisanie obiektu moc_znamionowa do zmiennej
+                    var pole_moc = document.forms['odb_3faz'].moc_znamionowa;
+                    //odczytanie mocy
+                    var moc_znamionowa = pole_moc.value;
+
+                    //przypisanie obiektu napiecie do zmiennej
+                    var pole_napiecie = document.forms['odb_3faz'].napiecie3f;
+                    //odczytanie napiecia
+                    var napiecie3f = pole_napiecie.value;
+                    // obliczanie pradu obciazenia
+                    var prad;
+                    prad = moc_znamionowa / (Math.sqrt(3) * napiecie3f);
+                    var prad_pop = prad.toFixed(2);
+                    if (prad_pop < 13) {
+                        alert(prad_pop + "A. Przewod 1,5mm i zab. 13A.");
+                    } else if (prad_pop < 16) {
+                        alert(prad_pop + "A. Przewod 2,5mm i zab. 16A.");
+                    } else if (prad_pop < 25) {
+                        alert(prad_pop + "A. Przewod 4mm i zab. 25A.");
+                    } else if (prad_pop < 32) {
+                        alert(prad_pop + "A. Przewod 6mm i zab. 32A.");
+                    } else if (prad_pop < 40) {
+                        alert(prad_pop + "A. Przewod 10mm i zab 40A.");
+                    } else if (prad_pop < 50) {
+                        alert(prad_pop + "A. Przewod 16mm i zab. 50A.");
+                    } else if (prad_pop < 63) {
+                        alert(prad_pop + "A. Przewod 25mm i zab. 63A.");
+                    } else if (prad_pop < 80) {
+                        alert(prad_pop + "A. Przewod 35mm i zab. 80A.");
+                    } else {
+                        alert("Wynik: " + prad_pop + "A. Mam wiedze tylko do 80 A.");
+                    }
+                    return false;
+                }
+            </script>
+            // prąd znamionowy silnika 1 fazowego
+            <form id="sil_1faz" action="">
+                <div>
+                    Podaj moc znamionową (W): <input type="number" name="moc_znamionowa"><br />
+                    Podaj napięcie znamionowe (V): <input type="number" name="napiecie" value="230"><br />
+                    Podaj sprawność znamionową silnika: <input type="number" name="sprawnosc" placeholder="0 - 1"><br />
+                    Podaj współczynnik mocy znamionowej: <input type="number" name="wspolczynnik" placeholder="0.75 - 0.9"><br />
+                    <button onclick=" return sil_1faz()" style="background-color:orange">Oblicz</button>
+                </div>
+            </form>
+            <script>
+                // Przekroj dla odbiornika 1 fazowego
+                function sil_1faz() {
+                    //przypisanie obiektu moc_znamionowa do zmiennej
+                    var pole_moc = document.forms['sil_1faz'].moc_znamionowa;
+                    //odczytanie mocy
+                    var moc_znamionowa = pole_moc.value;
+
+                    //przypisanie obiektu napiecie do zmiennej
+                    var pole_napiecie = document.forms['sil_1faz'].napiecie;
+                    //odczytanie napiecia
+                    var napiecie = pole_napiecie.value;
+
+                    // przypisanie obiektu sprawnosc do zmiennej
+                    var pole_sprawnosc = document.forms['sil_1faz'].sprawnosc;
+                    //odczytanie sprawnosci
+                    var sprawnosc = pole_sprawnosc.value;
+
+                    // przypisanie obiektu wspolczynnik do zmiennej
+                    var pole_wspolczynnik = document.forms['sil_1faz'].wspolczynnik;
+                    // odczyt sprawnosci
+                    var wspolczynnik = pole_wspolczynnik.value;
+
+
+                    // obliczanie pradu obciazenia
+                    var prad;
+                    prad = moc_znamionowa / (napiecie * sprawnosc * wspolczynnik);
+                    //alert(prad +" " + mianownik);
+                    var prad_pop = prad.toFixed(2);
+                    if (moc_znamionowa > 3680) {
+                        alert("Prąd powyżej 16A, potrzebne zasilanie 3-fazowe");
+                    } else if (prad_pop > 9.5) {
+                        alert(prad_pop + "A. Zastosuj przewod 2,5mm i zab. 16A.");
+                    } else if (prad_pop < 9.5) {
+                        alert(prad_pop + "A. Zastosuj przewod 1,5mm i zab 10A.");
+                    }
+
+                    return false;
+                }
+            </script>
+            // prąd znamionowy silnika 3 fazowego
+            <form id="sil_3faz" action="">
+                <div>
+                    Podaj moc znamionową (W): <input type="number" name="moc_znamionowa"><br />
+                    Podaj napięcie międzyprzewodowe (V): <input type="number" name="napiecie3f" value="400"><br />
+                    Podaj sprawność znamionową silnika: <input type="number" name="sprawnosc" placeholder="0 - 1"><br />
+                    Podaj współczynnik mocy znamionowej: <input type="number" name="wspolczynnik" placeholder="0.75 - 0.9"><br />
+                    <button onclick=" return sil_3faz()" style="background-color:orange">Oblicz</button>
+                </div>
+            </form>
+            <script>
+                // Przekroj dla odbiornika 1 fazowego
+                function sil_3faz() {
+                    //przypisanie obiektu moc_znamionowa do zmiennej
+                    var pole_moc = document.forms['sil_3faz'].moc_znamionowa;
+                    //odczytanie mocy
+                    var moc_znamionowa = pole_moc.value;
+
+                    //przypisanie obiektu napiecie do zmiennej
+                    var pole_napiecie = document.forms['sil_3faz'].napiecie3f;
+                    //odczytanie napiecia
+                    var napiecie3f = pole_napiecie.value;
+
+                    // przypisanie obiektu sprawnosc do zmiennej
+                    var pole_sprawnosc = document.forms['sil_3faz'].sprawnosc;
+                    //odczytanie sprawnosci
+                    var sprawnosc = pole_sprawnosc.value;
+
+                    // przypisanie obiektu wspolczynnik do zmiennej
+                    var pole_wspolczynnik = document.forms['sil_3faz'].wspolczynnik;
+                    // odczyt sprawnosci
+                    var wspolczynnik = pole_wspolczynnik.value;
+
+                    // obliczanie pradu obciazenia
+
+                    var prad;
+                    prad = moc_znamionowa / ((Math.sqrt(3) * napiecie3f) * sprawnosc * wspolczynnik);
+
+                    var prad_pop = prad.toFixed(2); // ograniczenie do 2 miejsc po przecinku
+                    if (prad_pop < 13) {
+                        alert(prad_pop + "A. Przewod 1,5mm i zab. 13A.");
+                    } else if (prad_pop < 16) {
+                        alert(prad_pop + "A. Przewod 2,5mm i zab. 16A.");
+                    } else if (prad_pop < 25) {
+                        alert(prad_pop + "A. Przewod 4mm i zab. 25A.");
+                    } else if (prad_pop < 32) {
+                        alert(prad_pop + "A. Przewod 6mm i zab. 32A.");
+                    } else if (prad_pop < 40) {
+                        alert(prad_pop + "A. Przewod 10mm i zab 40A.");
+                    } else if (prad_pop < 50) {
+                        alert(prad_pop + "A. Przewod 16mm i zab. 50A.");
+                    } else if (prad_pop < 63) {
+                        alert(prad_pop + "A. Przewod 25mm i zab. 63A.");
+                    } else if (prad_pop < 80) {
+                        alert(prad_pop + "A. Przewod 35mm i zab. 80A.");
+                    } else {
+                        alert("Wynik: " + prad_pop + "A. Mam wiedze tylko do 80 A.");
+                    }
+                    return false;
+                }
+            </script>
+        </div>
+
+
+
+        <div data-role="footer" data-theme="b">
+            <h1>@2017</h1>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
